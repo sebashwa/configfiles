@@ -52,6 +52,7 @@ alias code="cd ~/code/ && ls"
 alias gs="git status"
 alias ..="cd .."
 alias ...="cd .. && cd .."
+alias vi="vim"
 
 #PATH
 export PATH=/usr/local/bin:$PATH

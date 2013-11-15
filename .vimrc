@@ -89,8 +89,10 @@ set statusline+=\ col:%03c\                      "Colnr
 let mapleader = ","
 map <Leader><CR> :w<CR>
 map <Leader>a :Ack 
+map <Leader>A :Ack! 
 map <Leader>T :VroomRunTestFile<CR>
 map <Leader>t :VroomRunNearestTest<CR>
-map <C-n> :NERDTreeToggle<CR>
-map <C-b> :CtrlPBuffer<CR>
+map <Leader>n :NERDTreeToggle<CR>
+map <Leader>b :CtrlPBuffer<CR>
+map <Leader>f :CtrlP<CR>
 map <CR> :noh<CR>

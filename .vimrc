@@ -57,7 +57,6 @@ syntax on
 
 " Use line numbers and highlight them
 set number
-set relativenumber
 highlight LineNr cterm=NONE ctermfg=white ctermbg=darkgrey
 
 " Highlight search results
@@ -96,3 +95,6 @@ map <Leader>n :NERDTreeToggle<CR>
 map <Leader>b :CtrlPBuffer<CR>
 map <Leader>f :CtrlP<CR>
 map <CR> :noh<CR>
+inoremap kj <Esc>l
+inoremap Kj <Esc>l
+inoremap kJ <Esc>l

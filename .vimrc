@@ -32,6 +32,9 @@ set noswapfile
 " cache ctrlp on exit
 let g:ctrlp_clear_cache_on_exit = 0
 
+" let vroom use spring
+let g:vroom_use_spring = 1
+
 " MacOS clipboard = vim clipboard
 set clipboard=unnamed
 

@@ -85,7 +85,9 @@ set statusline+=\ col:%03c\                      "Colnr
 """"""""""""
 " MAPPINGS "
 """"""""""""
+
 let mapleader = ","
+let g:vroom_map_keys = 0
 map <Leader><CR> :w<CR>
 map <Leader>a :Ack 
 map <Leader>A :Ack! 
@@ -94,7 +96,19 @@ map <Leader>t :VroomRunNearestTest<CR>
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>b :CtrlPBuffer<CR>
 map <Leader>f :CtrlP<CR>
+vnoremap <Leader>r :call AlignTable()<CR>
+nnoremap <Leader>R Vi(k:call AlignTable()<CR>
+inoremap kJ <Esc>l
 map <CR> :noh<CR>
 inoremap kj <Esc>l
 inoremap Kj <Esc>l
-inoremap kJ <Esc>l
+
+""""""""""""""""""""
+" CUSTOM FUNCTIONS "
+""""""""""""""""""""
+
+function! AlignTable()
+  '<,'>Tabularize /,
+  '<,'>Tabularize /[
+  '<,'>Tabularize /]
+endfunction

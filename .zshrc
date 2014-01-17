@@ -47,7 +47,7 @@ eval "$(rbenv init -)"
 
 # ALIASES
 alias b="bundle exec"
-alias epic="cd ~/code/epic-relations/ && ls"
+alias epic="cd ~/code/epic-relations/ && git status"
 alias code="cd ~/code/ && ls"
 alias gs="git status"
 alias gco="git checkout"

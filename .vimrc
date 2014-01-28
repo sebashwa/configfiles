@@ -41,6 +41,11 @@ set showcmd
 " Make backspace work
 set backspace=indent,eol,start
 
+" No need to save buffer before switching
+set hidden
+
+" Write all files before running tests
+let g:vroom_write_all = 1
 """""""""""""""
 " LOOK & FEEL "
 """""""""""""""
@@ -91,8 +96,8 @@ let g:vroom_map_keys = 0
 map <Leader><CR> :w<CR>
 map <Leader>a :Ack 
 map <Leader>A :Ack! 
-map <Leader>T :VroomRunTestFile<CR>
-map <Leader>t :VroomRunNearestTest<CR>
+map <Leader>t :call vroom#RunTestFile({'runner':'rspec'})<CR>
+map <Leader>T :call vroom#RunNearestTest({'runner':'rspec'})<CR>
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>b :CtrlPBuffer<CR>
 map <Leader>f :CtrlP<CR>

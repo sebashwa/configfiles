@@ -99,6 +99,7 @@ map <Leader>A :Ack!
 map <Leader>t :call vroom#RunTestFile({'runner':'rspec'})<CR>
 map <Leader>T :call vroom#RunNearestTest({'runner':'rspec'})<CR>
 map <Leader>n :NERDTreeToggle<CR>
+map <Leader>N :NERDTreeFind<CR>
 map <Leader>b :CtrlPBuffer<CR>
 map <Leader>f :CtrlP<CR>
 vnoremap <Leader>r :call AlignTable()<CR>

@@ -56,6 +56,7 @@ alias gba="git branch -a"
 alias ..="cd .."
 alias ...="cd .. && cd .."
 alias vi="vim"
+alias rake="noglob rake"
 
 #PATH
 export PATH=/usr/local/bin:$PATH

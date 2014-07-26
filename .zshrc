@@ -47,8 +47,9 @@ eval "$(rbenv init -)"
 
 # ALIASES
 alias b="bundle exec"
-alias zimpel="cd ~/code/zimpel/ && git status"
-alias code="cd ~/code/ && ls"
+alias zimpel="cd ~/code/zimpel/"
+alias tripper="cd ~/code/tripper/"
+alias code="cd ~/code/"
 alias gs="git status"
 alias gco="git checkout"
 alias gb="git branch"
@@ -56,7 +57,7 @@ alias gba="git branch -a"
 alias ..="cd .."
 alias ...="cd .. && cd .."
 alias vi="vim"
-alias rake="noglob rake"
+alias rake="noglob bundle exec rake"
 
 #PATH
 export PATH=/usr/local/bin:$PATH

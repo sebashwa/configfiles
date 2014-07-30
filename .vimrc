@@ -104,9 +104,13 @@ map <Leader>b :CtrlPBuffer<CR>
 map <Leader>f :CtrlP<CR>
 vnoremap <Leader>r :call AlignTable()<CR>
 nnoremap <Leader>R Vi(k:call AlignTable()<CR>
-inoremap kJ <Esc>l
+nnoremap <Leader>co :copen<CR>
+nnoremap <Leader>cc :cclose<CR>
+nnoremap <Leader>cn :cnext<CR>
+nnoremap <Leader>cp :cprev<CR>
 map <CR> :noh<CR>
 inoremap kj <Esc>l
+inoremap kJ <Esc>l
 inoremap Kj <Esc>l
 
 """"""""""""""""""""

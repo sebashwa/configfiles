@@ -16,5 +16,6 @@
   ci = commit
   st = status
   s = status
+  d = diff
 [core]
 	excludesfile = ~/.gitignore

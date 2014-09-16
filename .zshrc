@@ -47,8 +47,9 @@ eval "$(rbenv init -)"
 
 # ALIASES
 alias b="bundle exec"
-alias zimpel="tmux attach -t zimpel"
+alias zimpel="cd ~/code/zimpel/"
 alias tripper="cd ~/code/tripper/"
+alias xzimpel="tmux attach -t zimpel"
 alias code="cd ~/code/"
 alias gst="git status"
 alias gco="git checkout"

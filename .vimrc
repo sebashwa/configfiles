@@ -33,7 +33,9 @@ set noswapfile
 let g:ctrlp_clear_cache_on_exit = 0
 
 " MacOS clipboard = vim clipboard
-set clipboard=unnamed
+if $TMUX == ''
+  set clipboard=unnamed
+endif
 
 " Show current command
 set showcmd
@@ -96,8 +98,8 @@ let g:vroom_map_keys = 0
 map <Leader><CR> :w<CR>
 map <Leader>a :Ack 
 map <Leader>A :Ack! 
-map <Leader>t :call vroom#RunTestFile({'runner':'rspec'})<CR>
-map <Leader>T :call vroom#RunNearestTest({'runner':'rspec'})<CR>
+map <Leader>t :call vroom#RunTestFile({'runner':'bundle exec rspec'})<CR>
+map <Leader>T :call vroom#RunNearestTest({'runner':'bundle exec rspec'})<CR>
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>N :NERDTreeFind<CR>
 map <Leader>b :CtrlPBuffer<CR>

@@ -110,6 +110,7 @@ nnoremap <Leader>co :copen<CR>
 nnoremap <Leader>cc :cclose<CR>
 nnoremap <Leader>cn :cnext<CR>
 nnoremap <Leader>cp :cprev<CR>
+map <C-n> :NERDTreeToggle<CR>
 map <CR> :noh<CR>
 inoremap kj <Esc>l
 inoremap kJ <Esc>l

@@ -22,7 +22,7 @@ map <Leader>A :Ack!
 Plug 'kien/ctrlp.vim', { 'on': ['CtrlP', 'CtrlPBuffer'] }
 map <Leader>b :CtrlPBuffer<CR>
 map <Leader>f :CtrlP<CR>
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|vendor|tmp)$'
 
 Plug 'janko-m/vim-test'
 nmap <silent> <leader>R :TestNearest<CR>
@@ -33,19 +33,17 @@ let g:neoterm_size = 20
 
 call plug#end()
 
+set hlsearch
+set autowrite
 set nowrap
 set tabstop=2 softtabstop=2 expandtab shiftwidth=2
 set list listchars=tab:\ \ ,trail:·
-
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-
 set noswapfile
 
 set number
 highlight LineNr ctermfg=grey
 
-
-let mapleader = ","
 map <Leader><CR> :w<CR>
 nnoremap <Leader>co :copen<CR>
 nnoremap <Leader>cc :cclose<CR>

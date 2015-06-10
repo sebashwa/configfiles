@@ -9,6 +9,7 @@ Plug 'ngmy/vim-rubocop'
 Plug 'kassio/neoterm'
 Plug 'tomtom/tcomment_vim'
 Plug 'kchmck/vim-coffee-script'
+Plug 'tpope/vim-surround'
 
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
 map <Leader>n :NERDTreeToggle<CR>

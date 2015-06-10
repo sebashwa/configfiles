@@ -40,25 +40,27 @@ plugins=(zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-
 # rbenv
-eval "$(rbenv init -)"
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+fi
+
+#PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=.bin/:$PATH
 
 # ALIASES
 alias b="bundle exec"
-alias zimpel="cd ~/code/zimpel/"
+alias mate="cd ~/code/mate/"
 alias tripper="cd ~/code/tripper/"
-alias xzimpel="tmux attach -t zimpel"
 alias code="cd ~/code/"
 alias gst="git status"
 alias gd="git diff"
 alias gco="git checkout"
 alias gba="git branch -a"
+alias gpro="git remote prune origin"
 alias ..="cd .."
 alias ...="cd .. && cd .."
-alias vi="vim"
-alias rake="noglob bundle exec rake"
-
-#PATH
-export PATH=/usr/local/bin:$PATH
+alias vi="nvim"
+alias vim="vim"
+alias mysql="/usr/local/Cellar/mysql55/5.5.30/bin/mysql"

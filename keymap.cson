@@ -1,0 +1,47 @@
+# Your keymap
+#
+# Atom keymaps work similarly to stylesheets. Just as stylesheets use selectors
+# to apply styles to elements, Atom keymaps use selectors to associate
+# keystrokes with events in specific contexts.
+#
+# You can create a new keybinding in this file by typing "key" and then hitting
+# tab.
+#
+# Here's an example taken from Atom's built-in keymap:
+#
+# '.editor':
+#   'enter': 'editor:newline'
+#
+# 'body':
+#   'ctrl-P': 'core:move-up'
+#   'ctrl-p': 'core:move-down'
+#
+
+'atom-text-editor':
+  'ctrl-p': 'fuzzy-finder:toggle-file-finder'
+  'ctrl-k': 'core:move-up'
+  'ctrl-j': 'core:move-down'
+  'ctrl-w o': 'pane:close-other-items'
+  'ctrl-w shift-L': 'pane:split-right'
+  'ctrl-w shift-H': 'pane:split-left'
+  'alt-cmd-h': 'pane:show-previous-item'
+  'alt-cmd-l': 'pane:show-next-item'
+
+'atom-text-editor.vim-mode.insert-mode':
+  'k j': 'vim-mode:reset-normal-mode'
+
+'atom-text-editor.vim-mode.normal-mode':
+  ', enter': 'core:save'
+  ', f': 'fuzzy-finder:toggle-file-finder'
+  ', b': 'fuzzy-finder:toggle-buffer-finder'
+  ', a': 'project-find:show'
+
+'atom-workspace atom-text-editor:not([mini])':
+  'ctrl-shift-j': 'editor:add-selection-below'
+  'ctrl-shift-k': 'editor:add-selection-above'
+
+'body atom-text-editor.autocomplete-active':
+  'up': 'autocomplete-plus:move-up'
+  'down': 'autocomplete-plus:move-down'
+  'ctrl-k': 'autocomplete-plus:move-up'
+  'ctrl-j': 'autocomplete-plus:move-down'

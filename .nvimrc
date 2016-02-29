@@ -10,6 +10,8 @@ Plug 'kassio/neoterm'
 Plug 'tomtom/tcomment_vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'ElmCast/elm-vim'
 
 Plug 'Townk/vim-autoclose'
 let g:AutoClosePairs_add = '<> |'
@@ -62,6 +64,12 @@ set noswapfile
 " Set line numbers
 set number
 highlight LineNr ctermfg=grey
+
+" Always show status bar
+set laststatus=2
+
+" Statusline
+set statusline=%<%F\ %m%h%r
 
 " Mappings
 map <CR> :noh<CR>

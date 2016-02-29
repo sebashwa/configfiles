@@ -1,5 +1,5 @@
-set nocompatible
-filetype off
+set encoding=utf-8
+filetype on
 let mapleader=','
 
 call plug#begin('~/.nvim/plugged')
@@ -10,6 +10,9 @@ Plug 'kassio/neoterm'
 Plug 'tomtom/tcomment_vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'tpope/vim-surround'
+
+Plug 'Townk/vim-autoclose'
+let g:AutoClosePairs_add = '<> |'
 
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
 map <Leader>n :NERDTreeToggle<CR>
@@ -33,23 +36,41 @@ let g:neoterm_size = 20
 
 call plug#end()
 
+" Highlight searches
 set hlsearch
+
+" Write while closing files
 set autowrite
+
+" Never wrap lines
 set nowrap
+
+" Indenting options
+set autoindent
+set smartindent
 set tabstop=2 softtabstop=2 expandtab shiftwidth=2
+
+" Set chars for spaces
 set list listchars=tab:\ \ ,trail:·
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
+" Ignore files
+set wildignore+=*/tmp/*,*/vendor/*,*.so,*.swp,*.zip
+
+" Disable swap files
 set noswapfile
 
+" Set line numbers
 set number
 highlight LineNr ctermfg=grey
 
+" Mappings
+map <CR> :noh<CR>
 map <Leader><CR> :w<CR>
+nnoremap <Space> :e<CR>
 nnoremap <Leader>co :copen<CR>
 nnoremap <Leader>cc :cclose<CR>
 nnoremap <Leader>cn :cnext<CR>
 nnoremap <Leader>cp :cprev<CR>
-map <CR> :noh<CR>
 inoremap kj <Esc>l
 inoremap kJ <Esc>l
 inoremap Kj <Esc>l

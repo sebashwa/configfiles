@@ -1,6 +1,6 @@
 [user]
-	name = Sebastian Warmbrunn
-	email = sebastianwarmbrunn@gmail.com
+  name = Sebastian Warmbrunn
+  email = sebastianwarmbrunn@gmail.com
 [push]
   default = current
 [color]
@@ -18,4 +18,5 @@
   s = status
   d = diff
 [core]
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
+  editor = nvim

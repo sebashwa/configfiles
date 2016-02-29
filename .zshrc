@@ -40,35 +40,39 @@ plugins=(zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# rbenv
+# RBENV
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
-#PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=.bin/:$PATH
+# JUMP
+eval "$(jump shell zsh)"
 
-# FUNCTIONS
 
-# set iterm tab title
+# ITERM TAB TITLE
 stt () {
   echo -ne "\033]1;$@\007"
 }
 
+# PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=.bin/:$PATH
+export PATH="/usr/local/sbin:$PATH"
+
 # ALIASES
-alias b="bundle exec"
+alias bx="bundle exec"
 alias mate="cd ~/code/mate/"
 alias tripper="cd ~/code/tripper/"
 alias code="cd ~/code/"
 alias gst="git status"
 alias gd="git diff"
+alias gf="git fetch"
 alias gco="git checkout"
+alias gcom="git commit"
 alias gba="git branch -a"
 alias gpro="git remote prune origin"
 alias ..="cd .."
 alias ...="cd .. && cd .."
 alias vi="nvim"
-alias vim="vim"
-alias mysql="/usr/local/Cellar/mysql55/5.5.30/bin/mysql"
+alias vim="nvim"
 

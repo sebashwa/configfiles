@@ -2,6 +2,7 @@ set encoding=utf-8
 filetype on
 let mapleader=','
 
+" Install plugins
 call plug#begin('~/.nvim/plugged')
 
 Plug 'kassio/neoterm'
@@ -9,6 +10,12 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'ElmCast/elm-vim'
+
+" Snippets
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 
 Plug 'Townk/vim-autoclose'
 let g:AutoClosePairs_add = '<> |'

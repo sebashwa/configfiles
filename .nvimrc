@@ -4,11 +4,8 @@ let mapleader=','
 
 call plug#begin('~/.nvim/plugged')
 
-Plug 'slim-template/vim-slim'
-Plug 'ngmy/vim-rubocop'
 Plug 'kassio/neoterm'
 Plug 'tomtom/tcomment_vim'
-Plug 'kchmck/vim-coffee-script'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'ElmCast/elm-vim'

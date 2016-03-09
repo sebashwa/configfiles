@@ -42,6 +42,9 @@ let g:neoterm_size = 20
 
 call plug#end()
 
+" Set colorscheme
+colorscheme default
+
 " Highlight searches
 set hlsearch
 

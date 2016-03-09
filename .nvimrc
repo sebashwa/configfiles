@@ -31,7 +31,7 @@ map <Leader>A :Ack!
 Plug 'kien/ctrlp.vim', { 'on': ['CtrlP', 'CtrlPBuffer'] }
 map <Leader>b :CtrlPBuffer<CR>
 map <Leader>f :CtrlP<CR>
-let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|vendor|tmp)$'
+let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|vendor|tmp|node_modules)$'
 
 Plug 'janko-m/vim-test'
 nmap <silent> <leader>R :TestNearest<CR>

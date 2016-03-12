@@ -2,46 +2,6 @@ set encoding=utf-8
 filetype on
 let mapleader=','
 
-" Install plugins
-call plug#begin('~/.nvim/plugged')
-
-Plug 'kassio/neoterm'
-Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-surround'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'ElmCast/elm-vim'
-
-" Snippets
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
-Plug 'honza/vim-snippets'
-
-Plug 'Townk/vim-autoclose'
-let g:AutoClosePairs_add = '<> |'
-
-Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
-map <Leader>n :NERDTreeToggle<CR>
-map <Leader>N :NERDTreeFind<CR>
-
-Plug 'mileszs/ack.vim', { 'on': ['Ack'] }
-map <Leader>a :Ack 
-map <Leader>A :Ack! 
-
-Plug 'kien/ctrlp.vim', { 'on': ['CtrlP', 'CtrlPBuffer'] }
-map <Leader>b :CtrlPBuffer<CR>
-map <Leader>f :CtrlP<CR>
-let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|vendor|tmp|node_modules)$'
-
-Plug 'janko-m/vim-test'
-nmap <silent> <leader>R :TestNearest<CR>
-nmap <silent> <leader>r :TestFile<CR>
-let test#strategy = "neoterm"
-let test#ruby#minitest#executable = 'bundle exec rake'
-let g:neoterm_size = 20
-
-call plug#end()
-
 " Set colorscheme
 colorscheme default
 
@@ -92,3 +52,56 @@ inoremap Kj <Esc>l
 inoremap jj <Esc>l
 inoremap jJ <Esc>l
 inoremap Jj <Esc>l
+
+" ---------------
+" --> PLUGINS <--
+" ---------------
+
+call plug#begin('~/.nvim/plugged')
+
+Plug 'kassio/neoterm'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'ElmCast/elm-vim'
+
+" Snippets
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+
+Plug 'Townk/vim-autoclose'
+let g:AutoClosePairs_add = '<> |'
+
+Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
+map <Leader>n :NERDTreeToggle<CR>
+map <Leader>N :NERDTreeFind<CR>
+
+Plug 'scrooloose/syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+
+Plug 'mileszs/ack.vim', { 'on': ['Ack'] }
+map <Leader>a :Ack 
+map <Leader>A :Ack! 
+
+Plug 'kien/ctrlp.vim', { 'on': ['CtrlP', 'CtrlPBuffer'] }
+map <Leader>b :CtrlPBuffer<CR>
+map <Leader>f :CtrlP<CR>
+let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|vendor|tmp|node_modules)$'
+
+Plug 'janko-m/vim-test'
+nmap <silent> <leader>R :TestNearest<CR>
+nmap <silent> <leader>r :TestFile<CR>
+let test#strategy = "neoterm"
+let test#ruby#minitest#executable = 'bundle exec rake'
+let g:neoterm_size = 20
+
+call plug#end()

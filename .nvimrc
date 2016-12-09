@@ -3,7 +3,7 @@ filetype on
 let mapleader=','
 
 " Set colorscheme
-colorscheme default
+colorscheme ron
 
 " Highlight searches
 set hlsearch

@@ -60,9 +60,13 @@ inoremap Jj <Esc>l
 call plug#begin('~/.nvim/plugged')
 
 Plug 'kassio/neoterm'
+
+" Misc
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
+
+" Languages
 Plug 'ElmCast/elm-vim'
 
 " Snippets
@@ -74,6 +78,7 @@ Plug 'honza/vim-snippets'
 Plug 'Townk/vim-autoclose'
 let g:AutoClosePairs_add = '<> |'
 
+" Filetree
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>N :NERDTreeFind<CR>
@@ -88,15 +93,18 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
+" Acking
 Plug 'mileszs/ack.vim', { 'on': ['Ack'] }
 map <Leader>a :Ack 
 map <Leader>A :Ack! 
 
+" Fuzzyfind
 Plug 'kien/ctrlp.vim', { 'on': ['CtrlP', 'CtrlPBuffer'] }
 map <Leader>b :CtrlPBuffer<CR>
 map <Leader>f :CtrlP<CR>
 let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|vendor|tmp|node_modules)$'
 
+" Testing
 Plug 'janko-m/vim-test'
 nmap <silent> <leader>R :TestNearest<CR>
 nmap <silent> <leader>r :TestFile<CR>

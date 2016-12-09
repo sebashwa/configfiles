@@ -95,8 +95,12 @@ let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|vendor|tmp|node_modules)$'
 Plug 'janko-m/vim-test'
 nmap <silent> <leader>R :TestNearest<CR>
 nmap <silent> <leader>r :TestFile<CR>
+nmap <silent> <leader>s :TestSuite<CR>
 let test#strategy = "neoterm"
-let test#ruby#minitest#executable = 'bundle exec rake'
 let g:neoterm_size = 20
+let test#ruby#minitest#executable = 'bundle exec rake'
+let test#javascript#mocha#executable = 'NODE_ENV=test ./node_modules/.bin/mocha src/setup.test.js'
+let test#javascript#mocha#options = '--compilers js:babel-register,js:babel-polyfill'
+let test#javascript#mocha#file_pattern = '\.test\.js'
 
 call plug#end()

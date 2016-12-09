@@ -39,8 +39,8 @@ set laststatus=2
 set statusline=%<%F\ %m%h%r
 
 " Mappings
-map <CR> :noh<CR>
 map <Leader><CR> :w<CR>
+nmap m<CR> :noh<CR>
 nnoremap <Space> :e<CR>
 nnoremap <Leader>co :copen<CR>
 nnoremap <Leader>cc :cclose<CR>

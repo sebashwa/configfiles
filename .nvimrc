@@ -71,6 +71,9 @@ Plug 'ElmCast/elm-vim'
 Plug 'dag/vim2hs'
 Plug 'kchmck/vim-coffee-script'
 
+" Statusline
+Plug 'itchyny/lightline.vim'
+let g:lightline = { 'colorscheme': 'seoul256' }
 
 " Filetree
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }

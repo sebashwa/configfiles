@@ -68,6 +68,7 @@ Plug 'terryma/vim-multiple-cursors'
 
 " Languages
 Plug 'ElmCast/elm-vim'
+Plug 'dag/vim2hs'
 
 
 " Filetree

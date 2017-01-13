@@ -64,6 +64,7 @@ Plug 'kassio/neoterm'
 " Misc
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
 
 " Languages

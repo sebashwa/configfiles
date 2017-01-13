@@ -64,8 +64,6 @@ export PATH="/usr/local/sbin:$PATH"
 
 # ALIASES
 alias bx="bundle exec"
-alias mate="cd ~/code/mate/"
-alias tripper="cd ~/code/tripper/"
 alias code="cd ~/code/"
 alias gst="git status"
 alias gd="git diff"
@@ -76,6 +74,7 @@ alias gba="git branch -a"
 alias gpro="git remote prune origin"
 alias ..="cd .."
 alias ...="cd .. && cd .."
+alias mux="./.tmux-session"
 alias vi="nvim"
 alias vim="nvim"
 

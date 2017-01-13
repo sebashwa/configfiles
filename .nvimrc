@@ -73,6 +73,11 @@ Plug 'ElmCast/elm-vim'
 Plug 'dag/vim2hs'
 Plug 'kchmck/vim-coffee-script'
 
+" Vimwiki
+Plug 'vimwiki/vimwiki'
+let g:vimwiki_list = [{'path': '~/.notes',
+                     \ 'syntax': 'markdown', 'ext': '.md'}]
+
 " Statusline
 Plug 'itchyny/lightline.vim'
 let g:lightline = { 'colorscheme': 'seoul256' }

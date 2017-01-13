@@ -40,6 +40,9 @@ plugins=(zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
+# DEFAULT EDITOR
+export EDITOR=nvim
+
 # RBENV
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)"

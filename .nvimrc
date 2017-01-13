@@ -66,6 +66,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
+let g:multi_cursor_exit_from_insert_mode = 0
 
 " Languages
 Plug 'ElmCast/elm-vim'

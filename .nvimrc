@@ -65,12 +65,15 @@ Plug 'kassio/neoterm'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+
+" Multicursor editing
 Plug 'terryma/vim-multiple-cursors'
 let g:multi_cursor_exit_from_insert_mode = 0
 
 " Languages
 Plug 'ElmCast/elm-vim'
 Plug 'dag/vim2hs'
+Plug 'dag/vim-fish'
 Plug 'kchmck/vim-coffee-script'
 
 " Vimwiki

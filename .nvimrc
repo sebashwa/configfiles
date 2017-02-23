@@ -59,9 +59,9 @@ inoremap Jj <Esc>l
 
 call plug#begin('~/.nvim/plugged')
 
-Plug 'kassio/neoterm'
-
 " Misc
+Plug 'kassio/neoterm'
+Plug 'vim-syntastic/syntastic'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'

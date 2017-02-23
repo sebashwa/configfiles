@@ -102,7 +102,10 @@ map <Leader>A :Ack!
 Plug 'kien/ctrlp.vim', { 'on': ['CtrlP', 'CtrlPBuffer'] }
 map <Leader>b :CtrlPBuffer<CR>
 map <Leader>f :CtrlP<CR>
-let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|vendor|tmp|node_modules)$'
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|\.sass-cache|.vagrant|vendor|tmp|node_modules)$',
+\ }
 
 " Testing
 Plug 'janko-m/vim-test'

@@ -104,7 +104,7 @@ map <Leader>b :CtrlPBuffer<CR>
 map <Leader>f :CtrlP<CR>
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|\.sass-cache|.vagrant|vendor|tmp|node_modules)$',
+  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|\.sass-cache|.vagrant|vendor|tmp|node_modules|bower_components)$',
 \ }
 
 " Testing

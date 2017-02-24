@@ -76,7 +76,6 @@ nmap <Leader>P <Plug>yankstack_substitute_newer_paste
 " Languages
 Plug 'ElmCast/elm-vim'
 Plug 'dag/vim2hs'
-Plug 'dag/vim-fish'
 Plug 'kchmck/vim-coffee-script'
 
 " Vimwiki

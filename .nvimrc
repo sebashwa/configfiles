@@ -29,7 +29,7 @@ set wildignore+=*/tmp/*,*/vendor/*,*.so,*.swp,*.zip
 set noswapfile
 
 " Set line numbers
-set number
+set relativenumber
 highlight LineNr ctermfg=grey
 
 " Always show status bar

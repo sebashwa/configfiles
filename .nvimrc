@@ -19,6 +19,11 @@ set autoindent
 set smartindent
 set tabstop=2 softtabstop=2 expandtab shiftwidth=2
 
+" Folding method
+set foldmethod=syntax
+set foldnestmax=3
+set foldlevelstart=99
+
 " Set chars for spaces
 set list listchars=tab:\ \ ,trail:·
 
@@ -29,7 +34,7 @@ set wildignore+=*/tmp/*,*/vendor/*,*.so,*.swp,*.zip
 set noswapfile
 
 " Set line numbers
-set relativenumber
+set number
 highlight LineNr ctermfg=grey
 
 " Always show status bar
@@ -61,26 +66,29 @@ call plug#begin('~/.nvim/plugged')
 
 " Misc
 Plug 'kassio/neoterm'
-Plug 'vim-syntastic/syntastic'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-
-" Multicursor editing
+Plug 'tpope/vim-abolish'
 Plug 'terryma/vim-multiple-cursors'
 let g:multi_cursor_exit_from_insert_mode = 0
 Plug 'maxbrunsfeld/vim-yankstack'
 nmap <Leader>p <Plug>yankstack_substitute_older_paste
 nmap <Leader>P <Plug>yankstack_substitute_newer_paste
+Plug 'flazz/vim-colorschemes'
 
 " Languages
 Plug 'ElmCast/elm-vim'
 Plug 'dag/vim2hs'
 Plug 'kchmck/vim-coffee-script'
+Plug 'pangloss/vim-javascript'
+Plug 'fleischie/vim-styled-components'
+Plug 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
 
 " Vimwiki
 Plug 'vimwiki/vimwiki'
-let g:vimwiki_list = [{'path': '~/.notes',
+let g:vimwiki_list = [{'path': '~/.notes/',
                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " Statusline
@@ -92,19 +100,19 @@ Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>N :NERDTreeFind<CR>
 
-" Acking
-Plug 'mileszs/ack.vim', { 'on': ['Ack'] }
-map <Leader>a :Ack 
-map <Leader>A :Ack! 
 
-" Fuzzyfind
-Plug 'kien/ctrlp.vim', { 'on': ['CtrlP', 'CtrlPBuffer'] }
-map <Leader>b :CtrlPBuffer<CR>
-map <Leader>f :CtrlP<CR>
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|\.sass-cache|.vagrant|vendor|tmp|node_modules|bower_components)$',
-\ }
+" Fuzzy Find
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+map <Leader>f :Files<CR>
+map <Leader>b :Buffers<CR>
+map <Leader>g :GFiles?<CR>
+map <Leader>a :Ag 
+map <Leader>A :Ag! 
+
+" Linting
+Plug 'neomake/neomake'
+autocmd! BufWritePost * Neomake
 
 " Testing
 Plug 'janko-m/vim-test'
@@ -119,3 +127,7 @@ let test#javascript#mocha#options = '--compilers js:babel-register,js:babel-poly
 let test#javascript#mocha#file_pattern = '\.test\.js'
 
 call plug#end()
+
+" Set highlighted line style
+hi CursorLine cterm=NONE ctermbg=8 ctermfg=NONE
+

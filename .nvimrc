@@ -89,11 +89,17 @@ nmap <Leader>p <Plug>yankstack_substitute_older_paste
 nmap <Leader>P <Plug>yankstack_substitute_newer_paste
 
 " Languages
+Plug 'elixir-editors/vim-elixir'
+let g:elixir_fold = 0
+
+Plug 'mhinz/vim-mix-format'
+let g:mix_format_on_save = 1
+
+Plug 'ElmCast/elm-vim'
 Plug 'dag/vim2hs'
-Plug 'kchmck/vim-coffee-script'
 Plug 'pangloss/vim-javascript'
+Plug 'rust-lang/rust.vim'
 Plug 'mxw/vim-jsx'
-Plug 'udalov/kotlin-vim'
 
 " Multicursor
 Plug 'terryma/vim-multiple-cursors'
@@ -108,11 +114,6 @@ nmap <Leader>P <Plug>yankstack_substitute_newer_paste
 Plug 'kassio/neoterm'
 let g:neoterm_size = 15
 let g:neoterm_autoscroll = 1
-
-" Vimwiki
-Plug 'vimwiki/vimwiki'
-let g:vimwiki_list = [{'path': '~/.notes/',
-                     \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " Statusline
 Plug 'itchyny/lightline.vim'

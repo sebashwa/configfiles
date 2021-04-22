@@ -11,7 +11,11 @@ set hlsearch
 set hidden
 
 " Write while closing files
-set autowrite
+set autowriteall
+
+" Allow switching to another file without
+" warning that the file is not written yet
+set hidden
 
 " Split windows in this order
 set splitright
@@ -24,11 +28,6 @@ set nowrap
 set autoindent
 set smartindent
 set tabstop=2 softtabstop=2 expandtab shiftwidth=2
-
-" Folding method
-set foldmethod=syntax
-set foldnestmax=3
-set foldlevelstart=99
 
 " Set chars for spaces
 set list listchars=tab:\ \ ,trail:·
@@ -76,6 +75,7 @@ Plug 'morhetz/gruvbox'
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_invert_selection=0
 
+
 " Misc
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
@@ -86,6 +86,7 @@ Plug 'mg979/vim-visual-multi'
 Plug 'maxbrunsfeld/vim-yankstack'
 nmap <Leader>p <Plug>yankstack_substitute_older_paste
 nmap <Leader>P <Plug>yankstack_substitute_newer_paste
+
 
 " Languages
 Plug 'elixir-editors/vim-elixir'
@@ -106,17 +107,21 @@ Plug 'kassio/neoterm'
 let g:neoterm_size = 15
 let g:neoterm_autoscroll = 1
 
+
 " Statusline
 Plug 'itchyny/lightline.vim'
 let g:lightline = { 'colorscheme': 'gruvbox' }
+
 
 " Filetree
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>N :NERDTreeFind<CR>
 
+
 "Distraction-free writing
 Plug 'junegunn/goyo.vim'
+
 
 " Fuzzy Find
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -124,15 +129,15 @@ Plug 'junegunn/fzf.vim'
 map <Leader>f :Files<CR>
 map <Leader>b :Buffers<CR>
 map <Leader>g :GFiles?<CR>
-map <Leader>a :Ag 
-map <Leader>A :Ag<CR>
+map <Leader>a :Ag<CR>
+
 
 " Linting
 Plug 'neomake/neomake'
-let g:neomake_ruby_rubocop_exe = '/usr/bin/env'
-let g:neomake_ruby_rubocop_args = ['bundle', 'exec', 'rubocop', '--rails', '--display-cop-names']
-let g:neomake_javascript_eslint_exe = system('PATH=$(npm bin):$PATH && which eslint | tr -d "\n"')
+let g:neomake_javascript_eslint_exe='./node_modules/.bin/eslint'
+let g:neomake_javascript_enabled_makers = ['eslint']
 autocmd! BufWritePost * Neomake
+
 
 " Testing
 Plug 'janko-m/vim-test'

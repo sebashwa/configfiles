@@ -45,6 +45,11 @@ set number
 " Always show status bar
 set laststatus=2
 
+" Statusline
+set statusline=%<%F\ %m%h%r
+
+set termguicolors
+
 " Mappings
 map <Leader><CR> :w<CR>
 nmap m<CR> :noh<CR>
@@ -66,9 +71,10 @@ inoremap Jj <Esc>l
 
 call plug#begin('~/.nvim/plugged')
 
-" Colors
-Plug 'KeitaNakamura/neodark.vim'
-let g:neodark#background = '#414141'
+" Colorscheme
+Plug 'morhetz/gruvbox'
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_invert_selection=0
 
 " Misc
 Plug 'tomtom/tcomment_vim'
@@ -76,6 +82,11 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-abolish'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'terryma/vim-multiple-cursors'
+let g:multi_cursor_exit_from_insert_mode = 0
+Plug 'maxbrunsfeld/vim-yankstack'
+nmap <Leader>p <Plug>yankstack_substitute_older_paste
+nmap <Leader>P <Plug>yankstack_substitute_newer_paste
 
 " Languages
 Plug 'dag/vim2hs'
@@ -105,8 +116,7 @@ let g:vimwiki_list = [{'path': '~/.notes/',
 
 " Statusline
 Plug 'itchyny/lightline.vim'
-let g:lightline = { 'colorscheme': 'neodark' }
-set noshowmode
+let g:lightline = { 'colorscheme': 'gruvbox' }
 
 " Filetree
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
@@ -148,4 +158,4 @@ let test#javascript#mocha#executable = 'NODE_ENV=test ./node_modules/.bin/mocha 
 
 call plug#end()
 
-colorscheme neodark
+colorscheme gruvbox

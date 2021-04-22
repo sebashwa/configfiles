@@ -82,8 +82,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-abolish'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'terryma/vim-multiple-cursors'
-let g:multi_cursor_exit_from_insert_mode = 0
+Plug 'mg979/vim-visual-multi'
 Plug 'maxbrunsfeld/vim-yankstack'
 nmap <Leader>p <Plug>yankstack_substitute_older_paste
 nmap <Leader>P <Plug>yankstack_substitute_newer_paste
@@ -101,14 +100,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'rust-lang/rust.vim'
 Plug 'mxw/vim-jsx'
 
-" Multicursor
-Plug 'terryma/vim-multiple-cursors'
-let g:multi_cursor_exit_from_insert_mode = 0
-
-" Yankstack
-Plug 'maxbrunsfeld/vim-yankstack'
-nmap <Leader>p <Plug>yankstack_substitute_older_paste
-nmap <Leader>P <Plug>yankstack_substitute_newer_paste
 
 " Reusable terminal
 Plug 'kassio/neoterm'

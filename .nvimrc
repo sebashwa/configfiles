@@ -1,3 +1,5 @@
+" vim: foldmethod=marker
+" General {{{1
 set encoding=utf-8
 filetype on
 autocmd BufNewFile,BufRead *.json.jbuilder set ft=ruby
@@ -47,9 +49,25 @@ set laststatus=2
 " Statusline
 set statusline=%<%F\ %m%h%r
 
-set termguicolors
+" Folding
+function! GetFoldText()
+  let line = getline(v:foldstart)
 
-" Mappings
+  let foldedlinecount = v:foldend - v:foldstart
+
+  let nucolwidth = &fdc + &number * &numberwidth
+  let windowwidth = winwidth(0) - nucolwidth - 11
+  let line = strpart(line, 0, windowwidth - 2 - len(foldedlinecount))
+  let fillcharcount = windowwidth - strdisplaywidth(line) - len(foldedlinecount)
+
+  return line . " ... " . foldedlinecount . " lines" . repeat(" ",fillcharcount)
+
+endfunction
+set foldtext=GetFoldText()
+" Do not open folds when navigating with } or {
+set foldopen-=block
+
+" Mappings {{{1
 map <Leader><CR> :w<CR>
 nmap m<CR> :noh<CR>
 nnoremap <Space> :e<CR>
@@ -64,10 +82,7 @@ inoremap jj <Esc>l
 inoremap jJ <Esc>l
 inoremap Jj <Esc>l
 
-" ---------------
-" --> PLUGINS <--
-" ---------------
-
+" Plugins {{{1
 call plug#begin('~/.nvim/plugged')
 
 " Colorscheme
@@ -157,3 +172,5 @@ let test#javascript#mocha#executable = 'NODE_ENV=test ./node_modules/.bin/mocha 
 call plug#end()
 
 colorscheme gruvbox
+hi Folded ctermfg=245 ctermbg=234 guifg=#928374 guibg=#1d2021
+ 

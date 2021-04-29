@@ -9,5 +9,9 @@ alias ..='cd ..'
 alias mux='./.tmux-session'
 alias gst='git status'
 alias gco='git checkout'
+alias tma='tmux a'
+alias tms='tmux a -t$(tmux list-sessions -F#S | fzf)'
+
+[ -f ~/.codeon.bash ] && source ~/.codeon.bash
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

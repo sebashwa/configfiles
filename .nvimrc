@@ -65,8 +65,10 @@ set foldtext=GetFoldText()
 set foldopen-=block
 
 " Mappings {{{1
-map <Leader><CR> :w<CR>
-nmap m<CR> :noh<CR>
+noremap <Leader><CR> :w<CR>
+noremap - ddp
+noremap _ ddkp
+nnoremap m<CR> :noh<CR>
 nnoremap <Space> :e<CR>
 nnoremap <Leader>co :copen<CR>
 nnoremap <Leader>cc :cclose<CR>
@@ -96,8 +98,8 @@ Plug 'tpope/vim-abolish'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'mg979/vim-visual-multi'
 Plug 'maxbrunsfeld/vim-yankstack'
-nmap <Leader>p <Plug>yankstack_substitute_older_paste
-nmap <Leader>P <Plug>yankstack_substitute_newer_paste
+nnoremap <Leader>p <Plug>yankstack_substitute_older_paste
+nnoremap <Leader>P <Plug>yankstack_substitute_newer_paste
 
 
 " Languages
@@ -128,17 +130,17 @@ let g:lightline = { 'colorscheme': 'gruvbox' }
 
 " Filetree
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
-map <Leader>n :NERDTreeToggle<CR>
-map <Leader>N :NERDTreeFind<CR>
+noremap <Leader>n :NERDTreeToggle<CR>
+noremap <Leader>N :NERDTreeFind<CR>
 
 
 " Fuzzy Find
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-map <Leader>f :Files<CR>
-map <Leader>b :Buffers<CR>
-map <Leader>g :GFiles?<CR>
-map <Leader>a :Ag<CR>
+noremap <Leader>f :Files<CR>
+noremap <Leader>b :Buffers<CR>
+noremap <Leader>g :GFiles?<CR>
+noremap <Leader>a :Ag<CR>
 
 
 " Linting
@@ -150,9 +152,9 @@ autocmd! BufWritePost * Neomake
 
 " Testing
 Plug 'janko-m/vim-test'
-nmap <silent> <Leader>R :Topen<CR>:TestNearest<CR>
-nmap <silent> <Leader>r :Topen<CR>:TestFile<CR>
-nmap <silent> <Leader>s :Topen<CR>:TestSuite<CR>
+nnoremap <silent> <Leader>R :Topen<CR>:TestNearest<CR>
+nnoremap <silent> <Leader>r :Topen<CR>:TestFile<CR>
+nnoremap <silent> <Leader>s :Topen<CR>:TestSuite<CR>
 let test#strategy = "neoterm"
 
 call plug#end()

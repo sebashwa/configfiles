@@ -6,6 +6,10 @@ let mapleader=','
 set encoding=utf-8
 set termguicolors
 
+" Jump to matching paren after inserting
+set showmatch
+set matchtime=2
+
 " Highlight search results
 set hlsearch
 

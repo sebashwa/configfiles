@@ -1,22 +1,18 @@
 " vim: foldmethod=marker
 " General {{{1
-set encoding=utf-8
 filetype on
 autocmd BufNewFile,BufRead *.json.jbuilder set ft=ruby
 let mapleader=','
+set encoding=utf-8
 set termguicolors
 
 " Highlight search results
 set hlsearch
 
-" Make it possible to change files without saving prompt
-set hidden
-
 " Write while closing files
 set autowriteall
 
-" Allow switching to another file without
-" warning that the file is not written yet
+" Allow switch to other file without 'not written yet' warning
 set hidden
 
 " Split windows in this order
@@ -45,9 +41,6 @@ set number
 
 " Always show status bar
 set laststatus=2
-
-" Statusline
-set statusline=%<%F\ %m%h%r
 
 " Folding
 function! GetFoldText()
@@ -135,10 +128,6 @@ map <Leader>n :NERDTreeToggle<CR>
 map <Leader>N :NERDTreeFind<CR>
 
 
-"Distraction-free writing
-Plug 'junegunn/goyo.vim'
-
-
 " Fuzzy Find
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -161,16 +150,8 @@ nmap <silent> <Leader>R :Topen<CR>:TestNearest<CR>
 nmap <silent> <Leader>r :Topen<CR>:TestFile<CR>
 nmap <silent> <Leader>s :Topen<CR>:TestSuite<CR>
 let test#strategy = "neoterm"
-let test#ruby#minitest#executable = 'bundle exec rake'
-let test#javascript#runner#executable = 'NODE_ENV=test ./node_modules/.bin/jest'
-let test#javascript#jest#executable = 'NODE_ENV=test ./node_modules/.bin/jest'
-let test#javascript#jest#file_pattern = '^.*\.test\.js.*$'
-let test#javascript#mocha#executable = 'NODE_ENV=test ./node_modules/.bin/mocha src/setup.test.js'
-" let test#javascript#mocha#options = '--compilers js:babel-register,js:babel-polyfill'
-" let test#javascript#mocha#file_pattern = '\.test\.js$'
 
 call plug#end()
 
 colorscheme gruvbox
 hi Folded ctermfg=245 ctermbg=234 guifg=#928374 guibg=#1d2021
- 

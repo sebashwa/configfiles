@@ -84,10 +84,11 @@ inoremap Jj <Esc>l
 " Plugins {{{1
 call plug#begin('~/.nvim/plugged')
 
-" Colorscheme
+" Couleur
 Plug 'morhetz/gruvbox'
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_invert_selection=0
+Plug 'ap/vim-css-color'
 
 
 " Misc

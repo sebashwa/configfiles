@@ -15,9 +15,15 @@ alias gam='git commit --amend'
 alias grc='git rebase --continue'
 alias gri='git rebase --interactive'
 alias tma='tmux a'
-alias tms='tmux a -t$(tmux list-sessions -F#S | fzf)'
 alias open='xdg-open'
 
 [ -f ~/.codeon.bash ] && source ~/.codeon.bash
+function tms() {
+  if [[ -n "$TMUX" ]]; then
+    tmux switch-client -t$(tmux list-sessions -F#S | fzf)
+  else
+    tmux attach -t$(tmux list-sessions -F#S | fzf)
+  fi
+}
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

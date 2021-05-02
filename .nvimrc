@@ -92,6 +92,9 @@ nnoremap <leader>co :copen<cr>
 nnoremap <leader>cc :cclose<cr>
 nnoremap <leader>cn :cnext<cr>
 nnoremap <leader>cp :cprev<cr>
+" Quote visual selection
+vnoremap <leader>" <esc>`<i"<esc>`>a"<esc>
+vnoremap <leader>' <esc>`<i'<esc>`>a'<esc>
 " Exit insert mode quickly
 inoremap kj <esc>l
 inoremap kJ <esc>l

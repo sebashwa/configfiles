@@ -3,7 +3,6 @@
 " ------------
 
 filetype on
-autocmd BufNewFile,BufRead *.json.jbuilder set ft=ruby
 let mapleader=','
 set encoding=utf-8
 set termguicolors

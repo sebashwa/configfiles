@@ -125,8 +125,8 @@ nnoremap <leader>P <Plug>yankstack_substitute_newer_paste
 Plug 'morhetz/gruvbox'
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_invert_selection=0
+Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'ap/vim-css-color'
-
 
 
 " Languages
@@ -152,7 +152,8 @@ let g:neoterm_autoscroll = "1"
 
 " Statusline
 Plug 'itchyny/lightline.vim'
-let g:lightline = { 'colorscheme': 'gruvbox' }
+let g:lightline = {}
+let g:lightline.colorscheme = 'gruvbox'
 
 
 " Filetree

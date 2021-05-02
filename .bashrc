@@ -1,8 +1,8 @@
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export GPG_TTY=(tty)
-export PS1=" ☺ "
 export PATH=$HOME/bin:$HOME/go/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH
+export PS1="::: "
 
 alias ll='ls -lah'
 alias fs='du -h -d 1'

@@ -1,5 +1,7 @@
 " vim: foldmethod=marker
-" General {{{1
+" SETTINGS {{{1
+" ------------
+
 filetype on
 autocmd BufNewFile,BufRead *.json.jbuilder set ft=ruby
 let mapleader=','
@@ -64,32 +66,42 @@ set foldtext=GetFoldText()
 " Do not open folds when navigating with } or {
 set foldopen-=block
 
-" Mappings {{{1
-noremap <Leader><CR> :w<CR>
+
+" MAPPINGS {{{1
+" -------------
+
+" Available keys that I don't use much in normal mode:
+" H - jump to top of page
+" L - jump to bottom of page
+" <bs> - jump to previous char
+
+" Save file quickly
+noremap <cr> :w<cr>
+" Remove search highlights
+nnoremap <leader><cr> :noh<cr>
+" Toggle current fold
+nnoremap <Space> za
+" Move lines
 noremap - ddp
-noremap _ ddkp
-nnoremap m<CR> :noh<CR>
-nnoremap <Space> :e<CR>
-nnoremap <Leader>co :copen<CR>
-nnoremap <Leader>cc :cclose<CR>
-nnoremap <Leader>cn :cnext<CR>
-nnoremap <Leader>cp :cprev<CR>
-inoremap kj <Esc>l
-inoremap kJ <Esc>l
-inoremap Kj <Esc>l
-inoremap jj <Esc>l
-inoremap jJ <Esc>l
-inoremap Jj <Esc>l
+noremap _ ddkP
+" Navigate in quickfix window
+nnoremap <leader>co :copen<cr>
+nnoremap <leader>cc :cclose<cr>
+nnoremap <leader>cn :cnext<cr>
+nnoremap <leader>cp :cprev<cr>
+" Exit insert mode quickly
+inoremap kj <esc>l
+inoremap kJ <esc>l
+inoremap Kj <esc>l
+inoremap jj <esc>l
+inoremap jJ <esc>l
+inoremap Jj <esc>l
 
-" Plugins {{{1
+
+" PLUGINS {{{1
+" ------------
+
 call plug#begin('~/.nvim/plugged')
-
-" Couleur
-Plug 'morhetz/gruvbox'
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_invert_selection=0
-Plug 'ap/vim-css-color'
-
 
 " Misc
 Plug 'tomtom/tcomment_vim'
@@ -99,8 +111,16 @@ Plug 'tpope/vim-abolish'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'mg979/vim-visual-multi'
 Plug 'maxbrunsfeld/vim-yankstack'
-nnoremap <Leader>p <Plug>yankstack_substitute_older_paste
-nnoremap <Leader>P <Plug>yankstack_substitute_newer_paste
+nnoremap <leader>p <Plug>yankstack_substitute_older_paste
+nnoremap <leader>P <Plug>yankstack_substitute_newer_paste
+
+
+" Couleur
+Plug 'morhetz/gruvbox'
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_invert_selection=0
+Plug 'ap/vim-css-color'
+
 
 
 " Languages
@@ -131,17 +151,17 @@ let g:lightline = { 'colorscheme': 'gruvbox' }
 
 " Filetree
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
-noremap <Leader>n :NERDTreeToggle<CR>
-noremap <Leader>N :NERDTreeFind<CR>
+noremap <leader>n :NERDTreeToggle<cr>
+noremap <leader>N :NERDTreeFind<cr>
 
 
-" Fuzzy Find
+" Fuzzyfind
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-noremap <Leader>f :Files<CR>
-noremap <Leader>b :Buffers<CR>
-noremap <Leader>g :GFiles?<CR>
-noremap <Leader>a :Ag<CR>
+noremap <leader>f :Files<cr>
+noremap <leader>b :Buffers<cr>
+noremap <leader>g :GFiles?<cr>
+noremap <leader>a :Ag<cr>
 
 
 " Linting
@@ -153,9 +173,9 @@ autocmd! BufWritePost * Neomake
 
 " Testing
 Plug 'janko-m/vim-test'
-nnoremap <silent> <Leader>R :Topen<CR>:TestNearest<CR>
-nnoremap <silent> <Leader>r :Topen<CR>:TestFile<CR>
-nnoremap <silent> <Leader>s :Topen<CR>:TestSuite<CR>
+nnoremap <silent> <leader>R :Topen<cr>:TestNearest<cr>
+nnoremap <silent> <leader>r :Topen<cr>:TestFile<cr>
+nnoremap <silent> <leader>s :Topen<cr>:TestSuite<cr>
 let test#strategy = "neoterm"
 
 call plug#end()

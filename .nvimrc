@@ -4,6 +4,7 @@
 
 filetype on
 let mapleader=','
+let maplocalleader = "\\"
 set encoding=utf-8
 set termguicolors
 

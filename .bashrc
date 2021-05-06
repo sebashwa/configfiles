@@ -1,5 +1,6 @@
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='ag -g ""'
+export LANG=en_US.UTF-8
 export GPG_TTY=(tty)
 export PATH=$HOME/bin:$HOME/go/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH
 export PS1="::: "

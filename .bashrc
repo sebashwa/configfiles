@@ -2,7 +2,7 @@ export EDITOR=nvim
 export LANG=en_US.UTF-8
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export GPG_TTY=(tty)
-export PATH=$HOME/bin:$HOME/go/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/bin:$HOME/go/bin:$HOME/.local/bin:$HOME/.cargo/bin:/usr/local/sbin:$PATH
 export PS1="::: "
 
 alias ll='ls -lah'

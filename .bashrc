@@ -7,10 +7,13 @@ export PS1="::: "
 alias ll='ls -lah'
 alias fs='du -h -d 1'
 alias ..='cd ..'
+alias ...="cd .. && cd .."
 alias mux='./.tmux-session'
-alias gst='git status'
 alias gco='git checkout'
+alias gst='git status'
+alias gba='git branch -a'
 alias glg='git log --graph --pretty=format:"%C(auto)%h%<(3)%d %s %C(bold blue)(%cr, %an)%Creset" --abbrev-commit --all'
+alias gpro="git remote prune origin"
 alias gam='git commit --amend'
 alias grc='git rebase --continue'
 alias gri='git rebase --interactive'

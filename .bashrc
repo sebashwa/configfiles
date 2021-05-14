@@ -20,6 +20,7 @@ alias grc='git rebase --continue'
 alias gri='git rebase --interactive'
 alias tma='tmux a'
 alias open='xdg-open'
+alias zzz='systemctl suspend'
 
 function tms() {
   if [[ -n "$TMUX" ]]; then

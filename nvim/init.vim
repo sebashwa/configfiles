@@ -75,9 +75,11 @@ set foldopen-=block
 " L - jump to bottom of page
 " <bs> - jump to previous char
 
-" Open this file in vertical split
+" Edit or source this file
 nnoremap <leader>ec :vsplit $MYVIMRC<cr>
 nnoremap <leader>sc :source $MYVIMRC<cr>
+" Switch to last file
+nnoremap <leader><leader> <c-^>
 " Save file quickly
 noremap <cr> :w<cr>
 " Remove search highlights

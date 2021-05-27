@@ -157,10 +157,10 @@ bar {
   position top
   separator_symbol "  |  "
   colors {
-    background #ebdbb2
-    focused_workspace #1d2021 #1d2021 #ebdbb2
-    inactive_workspace #928374 #ebdbb2 #1d2021
-    statusline #1d2021
+    background #000000
+    focused_workspace #ffffff #ffffff #000000
+    inactive_workspace #ffffff #000000 #ffffff
+    statusline #ffffff
   }
 }
 

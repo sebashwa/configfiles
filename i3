@@ -38,8 +38,10 @@ bindsym $mod+Shift+q kill
 
 # Start dmenu program launcher
 bindsym $mod+p exec --no-startup-id dmenu_run
-# Start passmenu
+# Start passmenu and get password
 bindsym $mod+Shift+p exec --no-startup-id passmenu
+# Start passmenu and get otp
+bindsym $mod+Shift+o exec --no-startup-id passmenu --get-otp
 # Decrease brightness
 bindcode 232 exec --no-startup-id light -U 20
 # Increase brightness

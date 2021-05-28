@@ -4,7 +4,7 @@ set $mod Mod4
 exec_always --no-startup-id "setxkbmap -layout us,de -option 'grp:shifts_toggle,grp:rswitch' "
 
 # Font
-font pango:DejaVu Sans Mono 10
+font pango:DejaVu Sans Mono 9
 
 # No borders
 default_border none

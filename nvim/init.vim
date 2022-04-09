@@ -158,7 +158,16 @@ let g:neoterm_autoscroll = "1"
 
 " Statusline
 Plug 'itchyny/lightline.vim'
-let g:lightline = {}
+let g:lightline = {
+    \ 'component_function': {
+      \ 'filename': 'ExpandFilename'
+  \ }
+\ }
+
+function! ExpandFilename()
+    return expand('%')
+endfunction
+
 let g:lightline.colorscheme = 'gruvbox'
 
 

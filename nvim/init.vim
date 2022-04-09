@@ -201,11 +201,25 @@ noremap <leader>g :GFiles?<cr>
       \ }
 
 
-" Linting
-Plug 'neomake/neomake'
-let g:neomake_javascript_eslint_exe='./node_modules/.bin/eslint'
-let g:neomake_javascript_enabled_makers = ['eslint']
-autocmd! BufWritePost * Neomake
+" Linting & Fixing
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+nmap <silent> <leader>an <Plug>(coc-diagnostic-next)
+nmap <silent> <leader>ab <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>ad <Plug>(coc-definition)
+nmap <silent> <leader>aa <Plug>(coc-codeaction)
+nnoremap <silent> <leader>af :CocCommand editor.action.formatDocument<cr>
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
 
 
 " Testing

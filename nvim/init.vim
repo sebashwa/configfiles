@@ -145,6 +145,8 @@ Plug 'dag/vim2hs'
 Plug 'pangloss/vim-javascript'
 Plug 'rust-lang/rust.vim'
 Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 
 " Reusable terminal

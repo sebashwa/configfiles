@@ -82,12 +82,10 @@ set foldopen-=block
 " Edit or source this file
 nnoremap <leader>ec :vsplit $MYVIMRC<cr>
 nnoremap <leader>sc :source $MYVIMRC<cr>
-" Switch to last file
-nnoremap <leader><leader> <c-^>
-" Save file quickly
-noremap <cr> :w<cr>
 " Remove search highlights
 nnoremap <leader><cr> :noh<cr>
+" Save
+nnoremap <cr> :w<cr>
 " Toggle current fold
 nnoremap <Space> za
 " Move lines

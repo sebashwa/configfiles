@@ -222,6 +222,15 @@ function! s:show_documentation()
 endfunction
 
 
+" Local config files
+Plug 'embear/vim-localvimrc'
+let g:localvimrc_name = ['.personal/.lnvimrc']
+let g:localvimrc_whitelist = [
+      \ '/Users/sebashwa/code/.*/.personal/.lnvimrc',
+      \ '/home/sebashwa/code/.*/.personal/.lnvimrc',
+      \ ]
+
+
 " Testing
 Plug 'vim-test/vim-test'
 nnoremap <silent> <leader>R :Topen<cr>:TestNearest<cr>

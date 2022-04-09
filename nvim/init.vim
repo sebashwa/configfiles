@@ -223,11 +223,16 @@ endfunction
 
 
 " Testing
-Plug 'janko-m/vim-test'
+Plug 'vim-test/vim-test'
 nnoremap <silent> <leader>R :Topen<cr>:TestNearest<cr>
 nnoremap <silent> <leader>r :Topen<cr>:TestFile<cr>
 nnoremap <silent> <leader>s :Topen<cr>:TestSuite<cr>
 let test#strategy = "neoterm"
+let test#python#runner = 'pytest'
+let test#python#pytest#file_pattern = '_tests\.py'
+let test#javascript#jest#file_pattern = '\.test\.js'
+let test#javascript#jest#executable = 'yarn test --watchAll=false --color'
+let g:test#javascript#runner = 'jest'
 
 call plug#end()
 
